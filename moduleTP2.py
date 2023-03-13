@@ -16,3 +16,4 @@ class Partie:
     def afficherPartie(self):
         print("Le nom du joueur : "+ self.nomJoueur)
         print("le pointage du joueur : " + str(self.pointage))
+        
