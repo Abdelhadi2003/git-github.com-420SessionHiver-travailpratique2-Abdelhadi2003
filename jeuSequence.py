@@ -1,20 +1,22 @@
 from machine import Pin
 from time import sleep
-from moduleTP2 import Partie
+import random
 
-led_bleu = Pin(13, Pin.OUT)
-led_rouge = Pin(12, Pin.OUT)
-led_vert = Pin(10, Pin.OUT)
-
-btn_bleu = Pin(16, Pin.IN, Pin.PULL_UP)
-btn_rouge = Pin(17, Pin.IN, Pin.PULL_UP)
-btn_vert = Pin(18, Pin.IN, Pin.PULL_UP)
-
-btn_bleu_prev = btn_bleu.value()
-btn_rouge_prev = btn_rouge.value()
-btn_vert_prev = btn_vert.value()
-
-ctr_bleu = 0
-ctr_rouge = 0
-ctr_vert = 0
-
+class Partie():
+    "classe qui comprend les informations sur la partie "
+   
+    # Constructeur de la classe
+    def __init__(self):
+        self.nomJoueur = ""
+        self.pointage = 0
+        self.sequence_en_cours = []
+        self.niveau_pause = 0.5
+        self.partie_en_cours = False
+        self.led_bleu = Pin(13, Pin.OUT)
+        self.led_rouge = Pin(12, Pin.OUT)
+        self.led_vert = Pin(10, Pin.OUT)
+        self.btn_bleu = Pin(16, Pin.IN, Pin.PULL_UP)
+        self.btn_rouge = Pin(17, Pin.IN, Pin.PULL_UP)
+        self.btn_vert = Pin(18, Pin.IN, Pin.PULL_UP)
+    
+    
